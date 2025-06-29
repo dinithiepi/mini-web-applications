@@ -1,13 +1,45 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Hello World</title>
+  <meta charset="UTF-8">
+  <title>Mini Web App - Greet Me</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 100px;
+      background-color: #f0f8ff;
+    }
+    input, button {
+      padding: 10px;
+      font-size: 16px;
+    }
+    #greeting {
+      margin-top: 20px;
+      font-size: 20px;
+      color: #333;
+    }
+  </style>
 </head>
 <body>
-    <h1 id="message"></h1>
+  <h1>Welcome!</h1>
+  <p>Enter your name:</p>
+  <input type="text" id="nameInput" placeholder="Your name">
+  <button onclick="sayHello()">Greet Me</button>
 
-    <script>
-        document.getElementById("message").textContent = "Hello, World!";
-    </script>
+  <div id="greeting"></div>
+
+  <script>
+    function sayHello() {
+      const name = document.getElementById("nameInput").value;
+      const greetingArea = document.getElementById("greeting");
+
+      if (name.trim() === "") {
+        greetingArea.textContent = "Please enter your name!";
+      } else {
+        greetingArea.textContent = `Hello, ${name}! Have a great day! 🌞`;
+      }
+    }
+  </script>
 </body>
 </html>
